@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark/Light Theme</title>
+    <style>
+        .theme-dark {
+            background-color: black;
+            color: white;
+        }
+
+        .theme-light {
+            background-color: white;
+            color: black;
+        }
+
+        .active {
+            border: solid 1px black;
+            border-radius: 50px;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .image {
+            height: 250px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        .thought {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .meaning {
+            font-size: 20px;
+            text-align: center;
+            padding: 10px 40px;
+        }
+
+        .icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+        }
+
+        .icon {
+            height: 40px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 50px;
+
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div class="icons">
+        <img src="night-mode.png" id="dark" class="icon" onclick="darkmode()" />
+        <img src="light-mode.png" id="light" class="icon" onclick="lightmode()" />
+    </div>
+    <h1 class="title">Thought Of the Day</h1>
+    <div class="content">
+        <img src="https://ischoolconnect.com/blog/wp-content/uploads/2021/10/way-through.jpeg" id="image" 
+            class="image" />
+
+        <h3 id="thought" class="thought">“The best way out is always through.” – Robert Frost</h3>
+        <p id="meaning" class="meaning">Whenever you face a problem in your life, don’t try to run away from it. Don’t
+            look for ways
+            to avoid it, lessen it, or find something to blame it on. Get through it. There are valuable lessons for
+            you to learn through the process. And when you come out the other end of the tunnel, you will realize how
+            you have grown as a person.
+        </p>
+    </div>
+    <script>
+        function lightmode(){
+            const icon1=document.getElementById("light");
+            icon1.classList.add("active");
+
+            const icon2=document.getElementById("dark");
+            icon2.classList.remove("active");
+
+            const theme=document.getElementById("body");
+            theme.className="theme-light";
+
+        }
+        function darkmode(){   
+            const icon1=document.getElementById("light");
+            icon1.classList.remove("active");
+
+            const icon2=document.getElementById("dark");
+            icon2.classList.add("active");
+
+            const theme=document.getElementById("body");
+            theme.className="theme-dark";      
+
+        }
+    </script>
+</body>
+
+</html>
